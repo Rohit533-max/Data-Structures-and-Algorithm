@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithm
-This repository contains the data structures and algorithms that i learned.
+This repository contains the data structures and algorithms implementations that i learned.
