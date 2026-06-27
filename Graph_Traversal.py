@@ -20,10 +20,10 @@ def bfs(start,visited,ans,adj_lis):
                 visited[i] = 1
 
 
-# n = 8
-# visited = [0]*(n+1)
-# ans = []
-# adj_lis = [[],[2,4],[1,3,6],[2],[1,5,7],[4,8],[2],[4,8],[5,7]]
-# dfs(1, visited, ans, adj_lis)
-# print(ans)
-# bfs(1, visited, ans, adj_lis)
+n = 8
+visited = [0]*(n+1)
+ans = []
+adj_lis = [[],[2,4],[1,3,6],[2],[1,5,7],[4,8],[2],[4,8],[5,7]]
+dfs(1, visited, ans, adj_lis)
+print(ans)
+bfs(1, visited, ans, adj_lis)
