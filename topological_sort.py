@@ -1,3 +1,6 @@
+"""Topological sort : Ordering of vertices such that every directed edge "U -> v", vertex u comes before v
+The topological sort works only on DAG (Directed Acyclic Graphs)"""
+#A directed graph is a graph where the edges of the graph must have a direction, Acyclic -> Does't consist any cycle
 class graph:
     def __init__(self,vertices):
         self.V = vertices
@@ -8,23 +11,23 @@ class graph:
 
     def remove_edge(self,u,v):
         self.adj[u].remove(v)
-
-    def dfs(self,node,visited,adj,stack):
+#DFS for topological sort
+    def dfs(self,node,visited,adj):
         visited[node] =1
         for i in adj[node]:
             if visited[i] != 1:
-                self.dfs(i,visited,adj,stack)
-        stack.append(node)
-
+                self.dfs(i,visited,adj)
+        self.stack.append(node)
+#topological sort function which encounter all the disconnected vetices
     def toposort(self):
         visited = [0]* self.V
-        stack = []
+        self.stack=[]
         for i in range(self.V):
             if visited[i] == 0:
-                self.dfs(i,visited,self.adj,stack)
+                self.dfs(i,visited,self.adj)
 
-        while stack:
-            print(stack.pop(), end = " ")
+        while self.stack:
+            print(self.stack.pop(), end = " ")
 
 
 g = graph(6)
