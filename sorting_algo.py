@@ -19,6 +19,3 @@ def insertion_sort(nums):
         nums[j+1]=  key
 
     return nums
-
-nums = [1,5,8,9,7,0,3,6,0]
-print(insertion_sort(nums))
