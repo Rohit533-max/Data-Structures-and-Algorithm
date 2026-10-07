@@ -43,7 +43,3 @@ def partition(arr,start,end):
     arr[i],arr[end] = arr[end],arr[i]
 
     return i
-
-arr = [5,6,0,1,7,3,9]
-quicksort(arr,0,len(arr)-1)
-print(arr)
