@@ -19,3 +19,31 @@ def insertion_sort(nums):
         nums[j+1]=  key
 
     return nums
+
+def quicksort(arr,start,end):
+    if start < end:
+
+        pivotIdx = partition(arr,start,end)
+
+        quicksort(arr,start,pivotIdx-1)
+        quicksort(arr,pivotIdx + 1,end)
+
+
+def partition(arr,start,end):
+    pivot = arr[end]
+    i = start -1
+
+    for j in range(start,end):
+        if arr[j] <= pivot:
+            i+=1
+            arr[i],arr[j] = arr[j],arr[i]
+
+    #placing the pivot at its correct position
+    i+=1
+    arr[i],arr[end] = arr[end],arr[i]
+
+    return i
+
+arr = [5,6,0,1,7,3,9]
+quicksort(arr,0,len(arr)-1)
+print(arr)
